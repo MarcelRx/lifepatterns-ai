@@ -1,5 +1,5 @@
 # Test Groq API connection
-# Import required libraries
+# --------------------------
 import os
 from groq import Groq
 from dotenv import load_dotenv
