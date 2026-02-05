@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 # Pattern detection from journal entries
 # ---------------------------------------
 import json
@@ -153,4 +151,3 @@ class PatternDetector:
         
         # Return all detected patterns
         return patterns
->>>>>>> Stashed changes

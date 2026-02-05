@@ -1,12 +1,6 @@
-<<<<<<< Updated upstream
-# Import required libraries
-import streamlit as st
-import os
-=======
 # LifePatterns AI - Main Application
 # -----------------------------------
 import streamlit as st
->>>>>>> Stashed changes
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -27,42 +21,6 @@ if "user" not in st.session_state:
 if "token" not in st.session_state:
     st.session_state.token = None  # JWT token for API authentication
 
-<<<<<<< Updated upstream
-# Create sidebar for system status
-st.sidebar.header("System Status")
-
-# Test database connection
-try:
-    from data.database import test_connection
-    db_ok = test_connection()
-    st.sidebar.success("Database Connected")
-except Exception as e:
-    st.sidebar.error(f"Database Error: {e}")
-
-# Add separator in sidebar
-st.sidebar.markdown("---")
-
-# Test Groq API connection
-try:
-    from models.groq_client import test_groq
-    groq_ok = test_groq()
-    st.sidebar.success("Groq API Connected")
-except Exception as e:
-    st.sidebar.error(f"Groq Error: {e}")
-
-# Add separator in main content
-st.markdown("---")
-
-# Create daily input form section
-st.header("Daily Entry")
-
-# Create form for daily entries
-with st.form("daily_entry"):
-    # Create two columns for form layout
-    col1, col2 = st.columns(2)
-    
-    # Left column inputs
-=======
 
 def show_main_app():
     """Display main application interface when user is authenticated"""
@@ -182,40 +140,12 @@ def show_settings(user):
     col1, col2 = st.columns(2)
     
     # Column 1: Account Information
->>>>>>> Stashed changes
     with col1:
         st.markdown("### Account Info")
         st.write(f"**Username:** {user.username}")
         st.write(f"**Email:** {user.email or 'Not set'}")
         st.write(f"**Member since:** {user.created_at.strftime('%Y-%m-%d')}")
     
-<<<<<<< Updated upstream
-    # Right column inputs
-    with col2:
-        sleep = st.number_input("Sleep hours", 0.0, 12.0, 7.0, 0.5)
-        activities = st.multiselect(
-            "Activities",
-            ["Exercise", "Work", "Social", "Reading", "Meditation", "Gaming"]
-        )
-    
-    # Journal text area
-    journal = st.text_area(
-        "Journal Entry",
-        placeholder="How was your day? Write your thoughts here..."
-    )
-    
-    # Submit button
-    submitted = st.form_submit_button("Save Entry", use_container_width=True)
-    
-    # Handle form submission
-    if submitted:
-        st.success("Entry saved! (Test mode - not actually saving yet)")
-        st.balloons()
-
-# Add footer separator
-st.markdown("---")
-st.caption("LifePatterns AI")
-=======
     # Column 2: Password Change Form
     with col2:
         st.markdown("### Change Password")
@@ -273,4 +203,3 @@ if __name__ == "__main__":
         # Show login page if not authenticated
         from login.auth_page import show_login_page
         show_login_page()
->>>>>>> Stashed changes
