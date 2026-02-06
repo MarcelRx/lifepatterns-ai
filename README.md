@@ -4,8 +4,6 @@
 
 A data-driven Streamlit application that analyzes daily user inputs (journal entries, activities, mood tracking) using Natural Language Processing and Machine Learning to identify behavioral patterns, predict life trajectory outcomes, and provide actionable improvement recommendations.
 
-![Design Preview](design/lifepatterns_design.png)
-
 ---
 
 ## Features
