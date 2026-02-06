@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 [Your Full Name]
+Copyright (c) 2025 [Mohsen Rassam]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,18 +22,9 @@ SOFTWARE.
 
 ------------------------------------------------------------------------
 
-ACADEMIC USE NOTICE & ATTRIBUTION
+USE NOTICE & ATTRIBUTION
 
-This software was developed as an Examensarbete (Degree Project) for the 
-Mjukvaruutvecklare med inriktning AI (Software Development with AI 
-specialization) program at NBI-Handelsakademin, Sweden.
-
-Academic Integrity:
-- This work is submitted for academic evaluation
-- Proper citation is required if using this code in other academic work
-- Plagiarism policies apply per NBI-Handelsakademin regulations
-
-Third-Party Services:
+Services:
 - Groq API: https://groq.com (LLM inference)
 - PostgreSQL: https://postgresql.org (database)
 - Streamlit: https://streamlit.io (UI framework)
@@ -41,35 +32,3 @@ Third-Party Services:
 The author acknowledges that this project integrates with external APIs 
 and services, each governed by their respective terms of service and 
 privacy policies.
-
-------------------------------------------------------------------------
-
-PRIVACY & DATA NOTICE
-
-This application processes personal journal entries and behavioral data.
-Users retain full ownership of their data. The author and NBI-Handelsakademin 
-assume no liability for how users handle sensitive personal information.
-
-For production deployment, ensure compliance with:
-- GDPR (General Data Protection Regulation)
-- Personal Data Act (Sweden: Personuppgiftslagen)
-- Applicable local privacy laws
-
------------------------------------------------------------------------
-
-THESIS SUPERVISION
-
-Supervisor: [Supervisor Name]
-Institution: NBI-Handelsakademin
-Program: Mjukvaruutvecklare med inriktning AI
-Defense Date: [Your Defense Date]
-
------------------------------------------------------------------------
-
-CONTACT
-
-For academic inquiries regarding this thesis work:
-[Your Email]
-
-For software issues or contributions:
-[GitHub Repository URL]
