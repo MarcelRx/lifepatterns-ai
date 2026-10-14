@@ -1,0 +1,52 @@
+# Gitleaks configuration for LifePatterns-AI
+# This configuration detects actual hardcoded secrets while allowing legitimate code
+# that uses password-related terms in UI fields, environment variable reads, and hashing logic.
+
+title = "LifePatterns-AI Secret Scanning"
+
+# Extend the default Gitleaks rules
+[extend]
+useDefault = true
+
+# Allowlist for files and patterns that are known to be safe
+[allowlist]
+description = "Global allowlist for known-safe patterns"
+
+# Allow example environment files with placeholder values
+paths = [
+  '''\.env\.example$''',
+  '''\.env\.production\.example$''',
+  '''\.env\.test$''',
+]
+
+# Allow specific patterns that are not actual secrets
+# These are common in legitimate code (UI fields, env var reads, etc.)
+regexes = [
+  # Streamlit password input fields
+  '''st\.text_input\([^)]*type\s*=\s*["\']password["\'][^)]*\)''',
+  # Environment variable reads for password
+  '''os\.getenv\(["\']DB_PASSWORD["\']''',
+  '''os\.getenv\(["\']POSTGRES_PASSWORD["\']''',
+  # Password encoding/hashing operations
+  '''password\.encode\(["\']utf-8["\']\)''',
+  '''password_bytes''',
+  '''password_hash''',
+  # Placeholder values in example files
+  '''your_password_here''',
+  '''your-secure-password-here''',
+  '''your-secure-production-password''',
+  '''your-secret-key-here''',
+  '''your-secret-key-here-change-in-production''',
+  '''your-groq-api-key-here''',
+  '''your-encryption-key-here''',
+  '''your-openweather-api-key''',
+  '''gsk_your_groq_api_key_here''',
+  # Test credentials (used in CI only)
+  '''test_password''',
+  '''test-secret-key-for-ci-only''',
+  '''test_user''',
+  # Documentation/comments
+  '''#.*password''',
+  '''#.*secret''',
+  '''#.*key''',
+]
